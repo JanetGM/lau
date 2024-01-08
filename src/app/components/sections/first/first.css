@@ -82,10 +82,12 @@ font-weight: 700;
 /* Estilo Mobile */
 
 @media screen and (min-width: 360px) and (max-width: 420px) {
+    .foir
     .first-section,.third-section, .fourth-section , .fifth-section, .six-section{
         display: flex;
         flex-direction: column;
         font-size: small;
+        display: flex;
     }  
     .first-section__tag--primary{
         position: initial;
