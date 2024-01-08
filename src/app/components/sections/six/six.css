@@ -1,0 +1,42 @@
+.footer__title {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    transform-origin: center;
+    white-space: nowrap;
+    width: 20px;
+    color: white;
+    text-align: center;
+    font-family: Arsenica Variable;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.footer-subtitle {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.footer__menu{
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.redes{
+    margin-top: 8rem;
+    display: flex;
+    align-items: flex-end;
+}

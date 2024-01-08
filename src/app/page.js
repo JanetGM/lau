@@ -1,113 +1,169 @@
 import Image from 'next/image'
+import Layout from './components/layout'
+import Container from './components/container';
+import FirstSection from './components/sections/first/FirstSection';
+import MiriamLu from '../../public/first-section/miriam-lau.svg';
+import SecondSection from './components/sections/second/SecondSection';
+import MiriamLu2 from '../../public/first-section/second-miriam.svg';
+import Eme from '../../public/first-section/eme.svg';
+import Pepermitlab from '../../public/third-section/pptlab.svg';
+import After from '../../public/third-section/after.svg';
+import Entrevista from '../../public/third-section/entrevista.svg';
+import ThirdSection from './components/sections/third/ThirdSection';
+import pepermint from '../../public/fourth-section/pepermint.svg';
+import eme from '../../public/fourth-section/eme.svg';
+import cursos from '../../public/fourth-section/eme.svg';
+import effie from '../../public/fourth-section/effie.svg';
+import board from '../../public/fourth-section/board-member.svg';
+import FourthSection from './components/sections/fourth/FourthSection';
+import FifthSection from './components/sections/fifth/FifthSection';
+import SixSection from './components/sections/six/SixSection';
+import linkendin from '../../public/six-section/linkendin.svg';
+import instagram  from'../../public/six-section/ig.svg';
+import youtube from '../../public/six-section/youtube.svg';
+import celphone from '../../public/third-section/celphone.svg';
+
+const TEXT_HOME = {
+   tag_first : "Soy Mirian Lau, una emprendedora <b class=red>atrevida</b>, libre y estructurada.",
+   tag_second: "Desde estrategias de marketing que desafían la norma, hasta la innovación empresarial sin restricciones, estoy aquí para llevar tus metas y las de tu organización al <b class=red>siguiente nivel.</b>",
+   title:"#Todoapulmón",
+   img_path:MiriamLu,
+}
+
+const TEXT_ABOUT = {
+   title_side_section:"ABOUT",
+   title_section:"SOY MIRIAN LAU",
+   subtitle_first:"Mi pasión, enfoque disruptivo y mi fuerza implacable me han llevado a desafiar las normas y a crear mi propio camino.",
+   subtitle_second:"<p>MI FILOSOFÍA<p><span>Creo en vivir la vida con pasión, abrazar lo auténtico e inusual. La vida es demasiado corta para jugar a lo seguro, y eso es lo que me impulsa a alcanzar nuevas alturas en el mundo de los negocios.</span>",
+   img_path:MiriamLu2,
+};
+
+const TEXT_IMPROVEMENTS={
+  title:'NOVEDADES',
+  arrCards:[
+    {
+      img:Pepermitlab,
+      title:'PEPPERMINT LAB',
+      subtitle:'“El diseño innovador y estratégico alineado con un equipo experto dan como resultado una ejecución impecable”',
+      littletter:'Conoce mi laboratorio de innovación en Lima, PE'
+    },
+    {
+      img:After,
+      title:'PODCAST',
+      subtitle:'“Nunca imaginé liderar un equipo de manera 100% remota conteniendo una crisis por detrás”',
+      littletter:'Cómo ser un exitoso nómada digital  ft. Sebastian Cuenca'
+    },
+    {
+      img:Entrevista,
+      title:'ENTREVISTAS',
+      subtitle:'“Uno de los primeros pasos para emprender es conocerse a si misma y saber en qué eres buena”',
+      littletter:'Extraído de mi entrevista en RPP'
+    }
+  ]
+}
+
+const TEXT_PODCAST = {
+  title:'PODCAST',
+  img:celphone,
+  tag:'Acompáñame a conocer las increíbles historias y las recetas del éxitos de los principales líderes empresariales y de los emprendedores que están marcando la pauta en el mercado, en mi podcast After Office.',
+  title_podcast:'NO TE PIERDAS NINGÚN <b class=red>EPISODIO</b>',
+  btn_title:'ESCUCHAR AHORA',
+}
+
+const TEXT_PROJECTS = {
+  arrCards : [
+  pepermint,
+  eme,
+  cursos,
+  effie,
+  board,  
+  ],
+  title:'PROYECTOS',
+  tag:'Estas son las acciones en las que participo en mi día a día, desde la innovación con empresas, asesorando a mujeres de alto impacto, hasta Board member e incluso jurado.',
+  img_background:Eme
+}
+
+const TEXT_FOOTER = {
+  title: 'SÍGUEME',
+  msg:'Emprende sin límites y desafía el status quo conmigo.<p>Conversemos...</p>',
+  items:[
+    'about',
+    'contenido',
+    'podcast',
+    'acciones'
+  ],
+  redes:[
+    linkendin,
+    instagram,
+    youtube
+  ]
+}
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+      <div>
+      <Layout 
+      bgImage={TEXT_HOME.img_path}
+      bgColor={'#848484'}>
+        <Container>
+         <FirstSection
+          texts={TEXT_HOME}
+         />
+         {/* <Image
+            className='image_miriam_lu'
+            src={TEXT_HOME.img_path}
+            alt="Miriam Lau"
+          /> */}
+        </Container>
+      </Layout>
+      <Layout
+      customeClass="max-h-[860px]" 
+      bgColor={"#616255"}>
+        <Container>
+          <SecondSection
+          texts={TEXT_ABOUT}
+          />
+          <Image
+            className='img-eme'
+            src={Eme}
+            alt="Miriam Lau"
+          />
+
+        </Container>
+      </Layout>
+      <Layout bgColor={"#CECABF"}>
+        <Container>
+          {/* SECCIÓN NOVEDADES */}
+          <ThirdSection
+            texts={TEXT_IMPROVEMENTS}
+          />
+        </Container>
+      </Layout>
+      <Layout 
+      customeClass={"max-h-[708px]"}
+      bgColor={"#616255"}
+      >
+        <Container>
+          {/* SECCIÓN PODCAST */}
+          <FourthSection
+          texts={TEXT_PODCAST}
+          />
+        </Container>
+      </Layout>
+      <Layout bgColor={"#CECABF"}>
+        <Container>
+          <FifthSection
+          texts={TEXT_PROJECTS}
+          />
+        </Container>
+      </Layout>
+      <Layout bgColor={"#F10009"}>
+        <Container>
+          <SixSection
+          texts={TEXT_FOOTER}
+          />
+        </Container>
+      </Layout>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
   )
 }

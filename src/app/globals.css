@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -24,4 +30,46 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+/* Estilos para el contenedor del título y el subrayado */
+.title-container {
+  @apply relative;
+}
+
+/* Estilos para el título */
+.parrafo {
+  @apply text-white text-base font-normal; /* Ajusta según tus necesidades */
+}
+
+.parrafo_subrayado {
+  @apply bg-red font-semibold; /* Ajusta según tus necesidades */
+}
+
+.title-subrayado {
+  @apply text-white text-5xl font-bold uppercase; /* Ajusta según tus necesidades */
+}
+
+/* Estilos para el subrayado */
+.underline {
+  @apply absolute bottom-0 left-0 h-3 w-full bg-red; /* Ajusta según tus necesidades */
+}
+
+/* Estilo con Tailwind CSS */
+.title-section {
+  @apply text-arsenica text-7xl font-bold uppercase; /* Ajusta según tus necesidades */
+}
+
+.layout-container{
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+
+@media screen and (min-width: 360px) and (max-width: 420px) {
+  .layout-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 360px;
+  }
 }

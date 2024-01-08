@@ -1,0 +1,28 @@
+.card {
+    border: 1px solid red;
+    border-radius: 12px;
+    padding: 10px;
+    width: 140px;
+    height: 140px;
+}
+
+.tag-project {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+}
+.img-podcast{
+width: 600px;
+}
+
+/* Estilo Mobile */
+
+@media screen and (min-width: 360px) and (max-width: 420px) {
+.img-podcast{
+    width: 50px;
+}
+}

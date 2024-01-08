@@ -1,0 +1,21 @@
+.title-white {
+    color: #FFF;
+    font-family: Arsenica Variable;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-top: 80px;
+}
+
+.title-button{
+color: #E3E1D9;
+font-family: Arsenica;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+text-transform: uppercase;
+margin-top: 24px;
+}
