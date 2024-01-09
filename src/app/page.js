@@ -101,7 +101,7 @@ const TEXT_FOOTER = {
 
 export default function Home() {
   return (
-      <div>
+      <div className='w-fit'>
       <Layout 
       bgImage={TEXT_HOME.img_path}
       bgColor={'#848484'}>
